@@ -96,9 +96,10 @@ async function patch(dir) {
     }
     fs.writeFileSync(
       join(dir, '.vercelignore'),
-      `__sapper__
-cypress
-node_modules`
+      `/__sapper__
+/cypress
+/node_modules
+!/src/node_modules`
     )
     console.log(green('Created'), '.vercelignore')
   } catch (e) {
